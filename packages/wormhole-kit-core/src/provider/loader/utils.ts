@@ -1,0 +1,31 @@
+import type { Chain } from '@wormhole-foundation/sdk-connect';
+
+export const EVMs: Chain[] = [
+  'Ethereum',
+  'Sepolia',
+  'Avalanche',
+  'Acala',
+  'Arbitrum',
+  'ArbitrumSepolia',
+  'Aurora',
+  'Base',
+  'BaseSepolia',
+  'Berachain',
+  'Blast',
+  'Bsc',
+  'Celo',
+  'Fantom',
+  'Gnosis',
+  'Karura',
+  'Linea',
+  'Mantle',
+  'Moonbeam',
+  'Optimism',
+  'OptimismSepolia',
+  'Polygon',
+  'PolygonSepolia',
+  'Rootstock',
+  'Scroll',
+  'Xlayer',
+];
+export const SOLANAs: Chain[] = ['Solana', 'Pythnet'];

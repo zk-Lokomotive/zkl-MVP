@@ -1,5 +1,101 @@
 {
-  "dependencies": {
-    "@zktx.io/wormhole-kit-core": "^0.1.12"
+  "name": "@zktx.io/wormhole-kit-monorepo",
+  "description": "A suite of utilities used to implement bridges based on the Wormhole protocol.",
+  "private": true,
+  "scripts": {
+    "format": "npm run format:core && npm run format:kit && npm run format:sui && npm run format:aptos && npm run format:solana && npm run format:celo",
+    "lint": "npm run lint:core && npm run lint:kit && npm run lint:sui && npm run lint:aptos && npm run lint:solana && npm run lint:celo",
+    "build": "npm run build:core && npm run build:kit",
+    "build:core": "cd ./packages/wormhole-kit-core && npm run build",
+    "format:core": "cd ./packages/wormhole-kit-core && npm run format",
+    "lint:core": "cd ./packages/wormhole-kit-core && npm run lint",
+    "build:kit": "cd ./packages/wormhole-kit && npm run build",
+    "format:kit": "cd ./packages/wormhole-kit && npm run format",
+    "lint:kit": "cd ./packages/wormhole-kit && npm run lint",
+    "start:sui": "cd ./packages/demo-sui && npm run start",
+    "format:sui": "cd ./packages/demo-sui && npm run format",
+    "lint:sui": "cd ./packages/demo-sui && npm run lint",
+    "start:celo": "cd ./packages/demo-celo && npm run start",
+    "format:celo": "cd ./packages/demo-celo && npm run format",
+    "lint:celo": "cd ./packages/demo-celo && npm run lint",
+    "start:solana": "cd ./packages/demo-solana && npm run start",
+    "format:solana": "cd ./packages/demo-solana && npm run format",
+    "lint:solana": "cd ./packages/demo-solana && npm run lint",
+    "start:aptos": "cd ./packages/demo-aptos && npm run start",
+    "format:aptos": "cd ./packages/demo-aptos && npm run format",
+    "lint:aptos": "cd ./packages/demo-aptos && npm run lint",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "wormhole",
+    "bridge",
+    "acala",
+    "algorand",
+    "aptos",
+    "arbitrum",
+    "aurora",
+    "avalanche",
+    "base goerli",
+    "binance smart chain",
+    "celo",
+    "ethereum (goerli)",
+    "ethereum (sepolia)",
+    "fantom",
+    "injective",
+    "karura",
+    "klaytn",
+    "moonbeam",
+    "near",
+    "neon",
+    "oasis",
+    "optimism (goerli)",
+    "polygon",
+    "sei",
+    "solana",
+    "sui",
+    "xpla",
+    "evm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zktx-io/wormhole-kit-monorepo.git"
+  },
+  "author": "daoauth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zktx-io/wormhole-kit-monorepo/issues"
+  },
+  "homepage": "https://zktx.io",
+  "workspaces": [
+    "packages/wormhole-kit-core",
+    "packages/wormhole-kit",
+    "packages/demo-sui",
+    "packages/demo-aptos",
+    "packages/demo-solana",
+    "packages/demo-celo"
+  ],
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-no-null": "^1.0.2",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --cache --fix",
+      "prettier --cache --write"
+    ]
   }
 }
