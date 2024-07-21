@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@zktx.io/wormhole-kit-core": "^0.1.12"
+  }
+}
