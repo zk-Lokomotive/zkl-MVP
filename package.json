@@ -97,5 +97,9 @@
       "eslint --cache --fix",
       "prettier --cache --write"
     ]
+  },
+  "dependencies": {
+    "@zktx.io/wormhole-kit": "^0.1.12",
+    "@zktx.io/wormhole-kit-core": "^0.1.12"
   }
 }
